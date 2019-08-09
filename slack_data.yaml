@@ -1,4 +1,9 @@
 init_config:
 
 instances:
-  - min_collection_interval: 30
+
+  - channels: ['C8VH6NR2A','C8UQY50AH','C8VP7V80P'] #your channel IDs (obtainable from URLs of the web client)
+    slack_app_token: <your_token_from: https://api.slack.com/apps>
+    # the collection interval might be best set to something like an hour
+    # to reduce the number of api calls but leaving at 30s for testing
+    min_collection_interval: 30
