@@ -1,6 +1,6 @@
 # dd_agent_slack_check
 
-A custom agent check that (so far) can report on the number of posts in a Slack channel that haven’t had a reply and average post response times in a channel for the past 24 hours.  It can also produce events to be used as posts back to the originating channel effectively "bumping" the unanswered posts by listing hyperlinks back to those threads.  The main goal being, that we can use it to alert (perhaps checking hourly) if things like #cake-batter, #sales-q_a, #cake-approval, #cake, or any of the #support-* channels have stale/missed posts in them.  
+A custom agent check that (so far) can report on the number of posts in a Slack channel that haven’t had a reply and average post response times in a channel for the past 24 hours.  It can also produce events to be used as posts back to the originating channel effectively "bumping" the unanswered posts by listing hyperlinks back to those threads.  The main goal being, that we can use it to alert (perhaps checking hourly) if any of the channels have stale/missed posts in them.  
 
 https://cl.ly/19de5cb840c8
 ![example dashboard](https://cl.ly/19de5cb840c8/Image%2525202019-08-13%252520at%2525207.06.08%252520PM.png)
