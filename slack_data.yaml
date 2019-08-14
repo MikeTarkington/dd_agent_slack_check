@@ -2,8 +2,16 @@ init_config:
 
 instances:
 
-  - channels: ['C8VH6NR2A','C8UQY50AH','C8VP7V80P'] #your channel IDs (obtainable from URLs of the web client)
-    slack_app_token: <your_token_from: https://api.slack.com/apps>
+  - channel_id: <your_channel_id> #your channel IDs (obtainable from URLs of the web client)
+    channel_name: <name_of_slack_channel>
+    slack_app_token: <token> #your token from: https://api.slack.com/apps
+    dd_api_key: <your_datadog_api_key>
     # the collection interval might be best set to something like an hour
-    # to reduce the number of api calls but leaving at 30s for testing
-    min_collection_interval: 30
+    # but this example is set to 10 minutes (600 seconds)
+    min_collection_interval: 600
+
+  - channel_id: <your_other_channel_id> 
+    channel_name: <name_of_other_slack_channel>
+    slack_app_token: <potentially alternate token if your check works on multiple slack apps/accounts>
+    dd_api_key: <your_datadog_api_key>
+    min_collection_interval: 600
