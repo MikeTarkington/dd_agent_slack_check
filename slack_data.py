@@ -87,13 +87,14 @@ class SlackData(AgentCheck):
         self.gauge('slack.data.24hr_avg_response_time',
                    avg_response_time_24hr, tags=[channel_name])
 
-        event_dict = {
-            "timestamp": time.time(),
-            "event_type": "Unanswerd Slack messages from {}".format(channel_name),
-            "api_key": dd_api_key,
-            "msg_title": "Unanswerd Slack messages from {}".format(channel_name),
-            "msg_text": str(self.event_permalinks(reversed(unanswered))).strip('[]'),
-            "tags": ["slack_data", channel_name]
-        }
+        if len(unanswered) > 0:
+            event_dict = {
+                "timestamp": time.time(),
+                "event_type": "Unanswerd Slack messages from {}".format(channel_name),
+                "api_key": dd_api_key,
+                "msg_title": "Unanswerd Slack messages from {}".format(channel_name),
+                "msg_text": str(self.event_permalinks(reversed(unanswered))).strip('[]'),
+                "tags": ["slack_data", channel_name]
+            }
 
-        self.event(event_dict)
+            self.event(event_dict)
